@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanji Steps — Free JLPT N5 Kanji Study</title>
+<meta name="description" content="Study all 103 JLPT N5 kanji for free: readings, meanings, example words and a practice quiz.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1 class="brand">Kanji Steps</h1>
+    <p class="tagline">Free JLPT N5 Kanji Study — all 103 kanji, readings, meanings and example words.</p>
+    <nav class="tabs" aria-label="Main">
+      <button id="tab-learn" class="tab active" type="button">Learn</button>
+      <button id="tab-quiz" class="tab" type="button">Quiz</button>
+    </nav>
+    <div class="search-box" id="search-box">
+      <label class="visually-hidden" for="search-input">Search kanji</label>
+      <input id="search-input" type="search" placeholder="Search by kanji, reading or meaning…" autocomplete="off">
+      <p id="search-count" class="search-count" aria-live="polite"></p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Learn view -->
+  <section id="view-learn" aria-label="Learn">
+    <div id="learn-container"></div>
+    <p id="no-results" class="no-results" hidden>No kanji match your search. Try a different kanji, reading or meaning.</p>
+  </section>
+
+  <!-- Quiz view -->
+  <section id="view-quiz" aria-label="Quiz" hidden>
+    <div class="quiz-card">
+      <div id="quiz-start">
+        <h2>Meaning Quiz</h2>
+        <p>You will see a kanji — pick its correct English meaning from 4 choices. 10 questions per round.</p>
+        <button id="quiz-start-btn" class="primary-btn" type="button">Start quiz</button>
+      </div>
+
+      <div id="quiz-play" hidden>
+        <p class="quiz-progress" id="quiz-progress"></p>
+        <div class="quiz-kanji" id="quiz-kanji"></div>
+        <div class="quiz-choices" id="quiz-choices"></div>
+        <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+        <button id="quiz-next-btn" class="primary-btn" type="button" hidden>Next</button>
+      </div>
+
+      <div id="quiz-result" hidden>
+        <h2 id="quiz-score"></h2>
+        <div id="quiz-review-wrap">
+          <h3>Review the ones you missed</h3>
+          <ul id="quiz-review" class="review-list"></ul>
+        </div>
+        <p id="quiz-perfect" hidden>Perfect score — nothing to review. Nice work!</p>
+        <button id="quiz-retry-btn" class="primary-btn" type="button">Try again</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Detail dialog -->
+<dialog id="detail-dialog" aria-labelledby="detail-kanji">
+  <button id="detail-close" class="close-btn" type="button" aria-label="Close">×</button>
+  <div class="detail-kanji" id="detail-kanji"></div>
+  <p class="detail-meaning" id="detail-meaning"></p>
+  <dl class="detail-readings">
+    <div><dt>On'yomi</dt><dd id="detail-on"></dd></div>
+    <div><dt>Kun'yomi</dt><dd id="detail-kun"></dd></div>
+  </dl>
+  <h3 class="detail-examples-title">Example words</h3>
+  <ul class="detail-examples" id="detail-examples"></ul>
+  <p class="detail-category" id="detail-category"></p>
+</dialog>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="pack-link">Want this as printable worksheets &amp; flashcards? <a href="https://314610251493.gumroad.com/l/jlpt-n5-kanji-master-pack">Get the full pack →</a></p>
+    <div class="about">
+      <h2>About this site</h2>
+      <p>Kanji Steps is a free study tool for the JLPT N5 kanji set. The JLPT does not publish an official kanji list; the 103 kanji shown here are the commonly used N5 list compiled from the legacy pre-2010 test specification and used by major study sites and textbooks. Readings and meanings are taken from data cross-checked entry-by-entry against KANJIDIC.</p>
+    </div>
+    <p class="copyright">Kanji Steps — free JLPT N5 kanji study.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
